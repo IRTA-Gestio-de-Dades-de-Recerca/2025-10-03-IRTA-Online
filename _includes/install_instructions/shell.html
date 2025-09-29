@@ -133,7 +133,7 @@
                         </ul>
                     </li>
                 <details>
-                    <summary>Did that installation failed?</summary>
+                    <summary>Did that installation failed or when you open the <code>Ubuntu 24.04</code> shows an error?</summary>
                     <div class="alert alert-warning">
                         <p>
                             If that's the case, you may need to set some settings on Windows for it to work. Note that you may need to have administrator access to do so.
@@ -156,7 +156,7 @@
 dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
 dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
 DISM /Online /Enable-Feature /All /FeatureName:Microsoft-Hyper-V
-				  </pre>
+				  </pre></li>
 			    </ul></li>
 			    </ol>
                           Once you've followed those steps, try to run the Ubuntu 24.04 installer again as shown above.
@@ -175,7 +175,7 @@ DISM /Online /Enable-Feature /All /FeatureName:Microsoft-Hyper-V
                     <summary>The terminal seems not responding when setting the password</summary>
                     <div class="alert alert-warning">
                         <p>
-                          The terminal is responsive, but as a safety feature the password is not shown, not even as <codd>****</code> as this would provide an information about its length to some prying eyes.
+                          The terminal is responsive, but as a safety feature the password is not shown, not even as <code>****</code> as this would provide an information about its length to some prying eyes.
                         </p>
                         <p>
                           Type your password slowly and press <kbd>Enter</kbd>, it will ask you to enter your password again. If both matches, then the password would be set, otherwise, it will ask you to start again.
