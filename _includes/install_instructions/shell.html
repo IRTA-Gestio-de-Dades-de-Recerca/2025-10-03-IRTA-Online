@@ -1,5 +1,5 @@
 <div id="shell">
-  <h3>The Bash Shell</h3>
+  <h3>The Unix (Bash) Shell</h3>
   <p>
     Bash is a commonly-used shell that gives you the power to do
     tasks more quickly.
@@ -132,37 +132,38 @@
                             <li>Once installed, restart the computer.</li>
                         </ul>
                     </li>
-                <details>
-                    <summary>Did that installation failed or when you open the <code>Ubuntu 24.04</code> shows an error?</summary>
-                    <div class="alert alert-warning">
+					<li>
+						<p>
+							To enable WSL, you may need to set some settings on Windows for it to work. Note that you may need to have administrator access to do so.
+						</p>
                         <p>
-                            If that's the case, you may need to set some settings on Windows for it to work. Note that you may need to have administrator access to do so.
-                        </p>
-                        <p>
-                          There are two options to enable WSL, one using the terminal, and another using the graphical interface:
-			  <ol>
-			    <li> <strong>Using the graphical interface</strong>:
-			      <ul>
-				<li> Open the Control Panel → Programs and Features → Turn Windows features on or off </li>
-				<li> Enable Virtual Machine Platform, Hyper-V, and Windows Subsystem for Linux. </li>
-			      </ul></li>
-			    <li> <strong>Using PowerShell as administrator</strong>:
-			      <ul>
-				<li>open the Window Start menu button or tap the <kbd>Win</kbd> Windows button on your keyboard and search "powershell"</li>
-				<li>Select "Run as Administrator" on the right hand side panel</li>
-				<li>If a pop-up window appears asking if you want to make changes to your device, select "Yes"</li>
-				<li>Run the following commands
-				  <pre>
-dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
-dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
-DISM /Online /Enable-Feature /All /FeatureName:Microsoft-Hyper-V
-				  </pre></li>
-			    </ul></li>
-			    </ol>
-                          Once you've followed those steps, try to run the Ubuntu 24.04 installer again as shown above.
-                        </p>
-                    </div>
-                </details>
+                          There are two options to enable WSL, one using the terminal (recomended), and another using the graphical interface:
+						<ol>
+							<li> <strong>Using PowerShell as administrator (recomended)</strong>:
+								<ul>
+									<li>Open the Window Start menu button or tap the <kbd>Win</kbd> Windows button on your keyboard and search "powershell"</li>
+									<li>Select “Run as administrator” from the right-hand panel, or right-click on “PowerShell” and then select “Run as administrator”</li>
+									<li>If a pop-up window appears asking if you want to make changes to your device, select "Yes"</li>
+									<li>Run the following commands in the order shown. Make sure to execute them one by one (line by line), rather than running the entire block at once, to avoid errors.
+										<pre>wsl.exe --update</pre>
+										<pre>dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart</pre>
+										<pre>dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart</pre>
+										<pre>dism.exe /online /enable-feature /featurename:Microsoft-Hyper-V /all /norestart</pre>
+										<pre>dism.exe /online /enable-feature /featurename:HypervisorPlatform /all /norestart</pre>
+									</li>
+								</ul></li>
+							<li> <strong>Using the graphical interface</strong>:
+								<ul>
+									<li> Open the Control Panel → Programs and Features → Turn Windows features on or off </li>
+									<li> Enable Virtual Machine Platform, Hyper-V, Windows Subsystem for Linux and Windows Hypervisor Platform </li>
+									<p> If your Windows system language is Catalan or Spanish, you’ll find it under:</p>
+									<li> Taulell de control/Panel de control → Programes i característiques/Programas y caraterísticas → Activa o desactiva les característiques del Windows/Activa o desactiva las características de Windows </li>
+									<li> Activar Plataforma de máquina virtual, Hyper-V, Subsistema de windows para Linux i/y Plataforma del hipervisor de Windows </li>
+								</ul></li>
+						</ol>
+						Once you’ve followed those steps, restart your computer. You should then be able to run Ubuntu 24.04.
+				</p>
+				</li>
                     <li>Once restarted, reopen the Windows Start Menu button in the bottom left corner of your screen, or tap the Windows button on your keyboard. In the search bar, type either:
                         <ul>
                             <li><code>Ubuntu</code>: selecting <code>Ubuntu 24.04.01 LTS</code> from the Start Menu will open the bash prompt directly, or</li>
