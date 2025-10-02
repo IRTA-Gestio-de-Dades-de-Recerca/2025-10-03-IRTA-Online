@@ -145,7 +145,8 @@
 									<li>Select “Run as administrator” from the right-hand panel, or right-click on “PowerShell” and then select “Run as administrator”</li>
 									<li>If a pop-up window appears asking if you want to make changes to your device, select "Yes"</li>
 									<li>Run the following commands in the order shown. Make sure to execute them one by one (line by line), rather than running the entire block at once, to avoid errors.
-										<pre>wsl.exe --update</pre>
+										<pre>wsl --install</pre>
+										<pre>wsl --update</pre>
 										<pre>dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart</pre>
 										<pre>dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart</pre>
 										<pre>dism.exe /online /enable-feature /featurename:Microsoft-Hyper-V /all /norestart</pre>
